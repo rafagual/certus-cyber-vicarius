@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicarius - Gestão e Remediação de Vulnerabilidades | Certus Cyber</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (CORRIGIDO) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles para alinhamento com a identidade da Certus (simulada) */
+        .certus-blue {
+            color: #00529B; /* Tom de azul corporativo */
+        }
+        .certus-bg-blue {
+            background-color: #00529B;
+        }
+        .certus-bg-blue-dark {
+            background-color: #003d73;
+        }
+        .certus-bg-gray {
+            background-color: #f8f9fa;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold tracking-tight text-gray-900;
+        }
+        .section-subtitle {
+            @apply mt-4 text-lg md:text-xl text-gray-600;
+        }
+        .cta-button {
+            @apply inline-block rounded-md px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-150 ease-in-out;
+        }
+        .cta-button-primary {
+            @apply cta-button certus-bg-blue hover:certus-bg-blue-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transform hover:scale-105;
+        }
+         .cta-button-secondary {
+            @apply cta-button bg-white text-blue-600 shadow-lg border border-gray-200 hover:bg-gray-50 transform hover:scale-105;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- 
+      HEADER (Simulado - Substituir pelo header real do site certuscyber.com.br) 
+    -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="https://certuscyber.com.br/" class="text-2xl font-bold certus-blue">
+                    CERTUS <span class="text-gray-700">CYBER</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-600 hover:certus-blue font-medium">Serviços</a>
+                <a href="#" class="text-gray-600 hover:certus-blue font-medium">Parceiros</a>
+                <a href="#" class="text-gray-600 hover:certus-blue font-medium">Sobre Nós</a>
+                <a href="#" class="text-gray-600 hover:certus-blue font-medium">Blog</a>
+                <a href="#" class="inline-block rounded-md px-5 py-2 text-base font-medium text-white certus-bg-blue hover:certus-bg-blue-dark">
+                    Fale Conosco
+                </a>
+            </div>
+            <div class="md:hidden">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu (oculto por padrão) -->
+         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t">
+            <a href="#" class="block text-gray-600 hover:certus-blue font-medium">Serviços</a>
+            <a href="#" class="block text-gray-600 hover:certus-blue font-medium">Parceiros</a>
+            <a href="#" class="block text-gray-600 hover:certus-blue font-medium">Sobre Nós</a>
+            <a href="#" class="block text-gray-600 hover:certus-blue font-medium">Blog</a>
+            <a href="#" class="block w-full text-center rounded-md px-5 py-2 text-base font-medium text-white certus-bg-blue hover:certus-bg-blue-dark">
+                Fale Conosco
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal da Página -->
+    <main>
+
+        <!-- 1. Seção Hero -->
+        <section class="bg-white py-20 md:py-32">
+            <div class="container mx-auto px-4 lg:px-6 text-center">
+                <span class="text-base font-semibold uppercase tracking-wider certus-blue">Parceiro Oficial Vicarius</span>
+                <h1 class="section-title mt-4 !text-4xl md:!text-5xl lg:!text-6xl">
+                    Vá Além da Detecção.<br>
+                    <span class="certus-blue">Remediação Autônoma</span> de Vulnerabilidades.
+                </h1>
+                <p class="section-subtitle max-w-3xl mx-auto">
+                    A Certus Cyber traz ao Brasil a plataforma vRx da Vicarius: a solução unificada que detecta, prioriza e <span class="font-bold text-gray-900">corrige</span> vulnerabilidades em um só lugar, com ou sem patches.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contato" class="cta-button-primary">
+                        Solicite uma Demonstração
+                    </a>
+                    <a href="#como-funciona" class="cta-button-secondary">
+                        Veja como funciona
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Seção "O Problema" -->
+        <section class="certus-bg-gray py-20 md:py-24">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-base font-semibold uppercase tracking-wider certus-blue">O Desafio Atual</span>
+                        <h2 class="section-title mt-2">
+                            Scanners Tradicionais Apenas Apontam o Problema
+                        </h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                            Equipes de TI e Segurança estão sobrecarregadas com milhares de alertas de vulnerabilidades de scanners tradicionais (como Tenable, Qualys ou Defender). O resultado?
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 certus-blue" data-lucide="alert-triangle" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Ruído e Fadiga de Alertas:</span> Dificuldade em saber o que é realmente crítico.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 certus-blue" data-lucide="clock" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Janela de Exposição:</span> Demora de semanas ou meses entre a detecção e a aplicação do patch.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 certus-blue" data-lucide="shield-off" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Patches Inexistentes:</span> Vulnerabilidades em softwares legados ou de dia-zero não têm correção.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 certus-blue" data-lucide="server-crash" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Risco de Quebra:</span> Aplicar patches de fornecedores pode quebrar sistemas críticos e exigir reinicializações.</span>
+                            </li>
+                        </ul>
+                    </div> <!-- FIM DA COLUNA 1 (TEXTO) -->
+
+                    <!-- INÍCIO DA COLUNA 2 (VÍDEO) -->
+                    <div class="rounded-lg bg-white p-6 shadow-xl border border-gray-200 overflow-hidden">
+                        <!-- 
+                          Vídeo incorporado do Vimeo.
+                          Parâmetros: autoplay=1 (auto-play), loop=1 (loop), muted=1 (mudo), 
+                          title=0, byline=0, portrait=0 (para limpar a interface do player)
+                        -->
+                        <iframe 
+                            src="https://player.vimeo.com/video/1039605557?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0" 
+                            class="rounded-md w-full aspect-video border border-gray-200"
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture" 
+                            allowfullscreen
+                        ></iframe>
+                        <p class="text-center mt-4 text-sm text-gray-600">Plataforma vRx em ação: remediando vulnerabilidades sem patch (vPatch).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção "A Solução" (Como Funciona) -->
+        <section id="como-funciona" class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-base font-semibold uppercase tracking-wider certus-blue">A Solução Vicarius vRx</span>
+                    <h2 class="section-title mt-2">
+                        Uma Plataforma End-to-End para Remediação
+                    </h2>
+                    <p class="section-subtitle">
+                        Vicarius vRx (Vulnerability Remediation) é a única plataforma que consolida todo o ciclo de vida da gestão de vulnerabilidades em um único agente leve e uma interface intuitiva.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: Detectar & Prioritizar -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                        <span class="flex-shrink-0 w-12 h-12 certus-blue" data-lucide="target" stroke-width="2"></span>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">1. Detectar e Prioritizar (vDetect)</h3>
+                        <p class="mt-2 text-gray-600">
+                            Identifique vulnerabilidades em SOs (Windows, macOS, Linux) e em milhares de aplicações de terceiros. A Vicarius prioriza ameaças com base no risco real ao seu negócio, não apenas em pontuações CVSS genéricas.
+                        </p>
+                    </div>
+                    <!-- Card 2: Corrigir SEM Patch (vPatch) -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                         <span class="flex-shrink-0 w-12 h-12 certus-blue" data-lucide="shield-check" stroke-width="2"></span>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">2. Corrigir SEM Patch (vPatch)</h3>
+                        <p class="mt-2 text-gray-600">
+                            O diferencial da Vicarius: aplique "patches virtuais" em memória. Isso bloqueia a exploração da vulnerabilidade <span class="font-bold">sem alterar arquivos do sistema, sem reinicialização</span> e sem esperar pelo fornecedor. Ideal para dia-zero e sistemas legados.
+                        </p>
+                    </div>
+                    <!-- Card 3: Gerenciar Patches (vManager) -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                         <span class="flex-shrink-0 w-12 h-12 certus-blue" data-lucide="package-check" stroke-width="2"></span>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">3. Gerenciar Patches (vManager)</h3>
+                        <p class="mt-2 text-gray-600">
+                            Para quando o patch oficial é necessário, a vRx automatiza o processo. Acesse o maior catálogo de patches do mundo (mais de 4000 aplicações) e distribua correções de forma centralizada e agendada, reduzindo o trabalho manual a zero.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção "Por que Certus + Vicarius?" -->
+        <section class="certus-bg-gray py-20 md:py-24">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Imagem Placeholder -->
+                    <div class="rounded-lg bg-white p-6 shadow-xl border border-gray-200 order-last md:order-first">
+                        <img src="https://cdn.prod.website-files.com/66f277960b716d6f5a4f06a2/686d3dbe73fd46746246c0c9_prioritization.avif" 
+                             alt="Dashboard de Priorização de Risco Vicarius"
+                             onerror="this.src='https://placehold.co/600x400/E0F2FE/00529B?text=Dashboard+de+Prioriza%C3%A7%C3%A3o&font=inter';"
+                             class="rounded-md object-cover w-full h-full border border-gray-200">
+                    </div>
+                    
+                    <div>
+                        <span class="text-base font-semibold uppercase tracking-wider certus-blue">A Parceria Estratégica</span>
+                        <h2 class="section-title mt-2">
+                            Vicarius é a Ferramenta. Certus Cyber é a Estratégia.
+                        </h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                            Nós não somos apenas uma revenda. A Gestão de Vulnerabilidades é um dos nossos *core services* de consultoria. Ao contratar a Vicarius com a Certus Cyber, você não recebe apenas um software, você recebe um parceiro estratégico:
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 text-green-500" data-lucide="check-circle" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Implementação Especializada:</span> Configuramos e ajustamos o vRx para o seu ambiente, garantindo a redução real da sua superfície de ataque.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 text-green-500" data-lucide="check-circle" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Foco em PMEs:</span> Entendemos a realidade das pequenas e médias empresas. Oferecemos uma solução de nível enterprise com o custo-benefício que você precisa.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-6 h-6 text-green-500" data-lucide="check-circle" stroke-width="2.5"></span>
+                                <span class="ml-3 text-gray-700"><span class="font-semibold">Suporte Local e Consultivo:</span> Fale conosco em português. Integramos a gestão de vulnerabilidades aos seus processos de GRC e segurança.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Seção de Comparação -->
+        <section class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="section-title">
+                        Vicarius vs. Scanners Tradicionais
+                    </h2>
+                    <p class="section-subtitle">
+                        Veja por que o vRx substitui e supera as soluções legadas de gestão de vulnerabilidades.
+                    </p>
+                </div>
+                <div class="mt-12 flow-root">
+                    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                            <table class="min-w-full divide-y divide-gray-300 border border-gray-200 rounded-lg shadow-sm">
+                                <thead>
+                                    <tr class="divide-x divide-gray-200">
+                                        <th scope="col" class="py-3.5 pl-4 pr-4 text-left text-sm font-semibold text-gray-900 sm:pl-6">Funcionalidade</th>
+                                        <th scope="col" class="px-4 py-3.5 text-center text-sm font-semibold text-gray-900 certus-blue bg-blue-50">Vicarius vRx</th>
+                                        <th scope="col" class="px-4 py-3.5 text-center text-sm font-semibold text-gray-900">Tenable / Qualys</th>
+                                        <th scope="col" class="px-4 py-3.5 text-center text-sm font-semibold text-gray-900">Microsoft Defender VM</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white">
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6">Detecção de Vulnerabilidades</td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Sim</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Sim</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Sim</span></td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6">Priorização Baseada em Risco</td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Avançada</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">Baseada em CVSS</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">Limitada</span></td>
+                                    </tr>
+                                     <tr class="divide-x divide-gray-200">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6">Remediação (Proteção sem Patch)</td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="font-bold inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">SIM (vPatch)</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Não</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Não</span></td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6">Gerenciamento de Patches (3ºs)</td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Sim (Catálogo Amplo)</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Módulo Adicional Caro</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">Limitado (Intune)</span></td>
+                                    </tr>
+                                     <tr class="divide-x divide-gray-200">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6">Agente Único e Leve</td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Sim</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Não (Múltiplos Agentes)</span></td>
+                                        <td class="whitespace-nowrap px-4 py-4 text-sm text-gray-700 text-center"><span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Sim</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Seção Final de CTA (Contato) -->
+        <section id="contato" class="certus-bg-blue">
+            <div class="container mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                    Reduza sua Superfície de Ataque Agora.
+                </h2>
+                <p class="mt-6 text-lg leading-8 text-blue-100 max-w-2xl mx-auto">
+                    Não espere pela próxima vulnerabilidade crítica. Veja como a Vicarius e a Certus Cyber podem remediar seus riscos de forma proativa e eficiente.
+                </T>
+                <div class="mt-10">
+                    <a href="mailto:rafael.gualberto@certuscyber.com.br?subject=Interesse%20em%20Demonstra%C3%A7%C3%A3o%20Vicarius" class="cta-button-secondary">
+                        Agende sua Demo Gratuita
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 
+      FOOTER (Simulado - Substituir pelo footer real do site certuscyber.com.br) 
+    -->
+    <footer class="bg-gray-900 text-gray-400" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="container mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-20">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-4">
+                    <a href="https://certuscyber.com.br/" class="text-3xl font-bold text-white">
+                        CERTUS <span class="text-gray-400">CYBER</span>
+                    </a>
+                    <p class="text-sm leading-6 text-gray-400">
+                        Especialistas em Resiliência Cibernética e Conformidade.
+                    </p>
+                    <div class="flex space-x-6">
+                        <!-- Redes Sociais (placeholder) -->
+                        <a href="#" class="text-gray-500 hover:text-white">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold leading-6 text-white">Soluções</h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Gestão de Vulnerabilidades</a></li>
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Proteção de Identidade (AD)</a></li>
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">GRC e LGPD</a></li>
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">DPO as a Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-10 md:mt-0">
+                            <h3 class="text-sm font-semibold leading-6 text-white">Parceiros</h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Sophos</a></li>
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Veeam</a></li>
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Halcyon</a></li>
+                                <li><a href="#" class="text-sm leading-6 text-gray-400 hover:text-white">Vicarius</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-1 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold leading-6 text-white">Empresa</h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li><a href="mailto:contato@certuscyber.com.br" class="text-sm leading-6 text-gray-400 hover:text-white">contato@certuscyber.com.br</a></li>
+                                <li><p class="text-sm leading-6 text-gray-400">R Pais Leme, 215, Conj 1713, Pinheiros, São Paulo, SP</p></li>
+                                <li><p class="text-sm leading-6 text-gray-400">CNPJ: 62.015.794/0001-14</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 border-t border-gray-800 pt-8 sm:mt-20 lg:mt-24">
+                <p class="text-xs leading-5 text-gray-500">&copy; 2024 CERTUS CYBER TECNOLOGIA DA INFORMACAO LTDA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Espera o DOM carregar completamente antes de executar os scripts
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // Inicializa Lucide Icons
+            try {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                } else {
+                    console.error('Lucide library not loaded.');
+                }
+            } catch (e) {
+                console.error('Error creating lucide icons:', e);
+            }
+
+            // Lógica simples para menu mobile
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    const isMenuOpen = mobileMenu.classList.contains('hidden');
+                    if (isMenuOpen) {
+                        mobileMenu.classList.remove('hidden');
+                        // Trocar ícone para 'X' (opcional, mas bom UX)
+                        menuButton.innerHTML = `<svg id="menu-icon-close" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        // Trocar ícone para 'Menu'
+                        menuButton.innerHTML = `<svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
